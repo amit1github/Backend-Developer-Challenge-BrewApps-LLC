@@ -41,10 +41,12 @@ To set up and run this application locally, follow these steps:
 
 2. Install the project dependencies:
 
+    ```bash
    npm install
 
 3. Start the application
 
-npm start
+    ```bash
+    npm start
 
 Now, the API should now be running at `http://localhost:3000`
