@@ -6,10 +6,18 @@ const Book = require("../models/book");
 exports.getAllBooks = async (req, res) => {
   try {
     const books = await Book.find();
-    res.status(200).json(books);
+    res.status(200).json({
+      success: true,
+      message: "Books retrieved successfully",
+      data: books,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error retrieving books" });
+    res.status(500).json({
+      success: false,
+      message: "Error retrieving books",
+      error: error.message,
+    });
   }
 };
 
@@ -27,10 +35,18 @@ exports.addNewBook = async (req, res) => {
     });
 
     const savedBook = await newBook.save();
-    res.status(201).json(savedBook);
+    res.status(201).json({
+      success: true,
+      message: "Book added successfully",
+      data: savedBook,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error adding a book" });
+    res.status(500).json({
+      success: false,
+      message: "Error adding a book",
+      error: error.message,
+    });
   }
 };
 
@@ -42,14 +58,22 @@ exports.getBookById = async (req, res) => {
     const book = await Book.findById(req.params.id);
 
     if (!book) {
-      res.status(404).json({ error: "Book not found" });
+      res.status(404).json({ success: false, message: "Book not found" });
       return;
     }
 
-    res.status(200).json(book);
+    res.status(200).json({
+      success: true,
+      message: "Book retrieved successfully",
+      data: book,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error retrieving the book" });
+    res.status(500).json({
+      success: false,
+      message: "Error retrieving the book",
+      error: error.message,
+    });
   }
 };
 
@@ -67,14 +91,22 @@ exports.UpdateBookDetails = async (req, res) => {
     );
 
     if (!updatedBook) {
-      res.status(404).json({ error: "Book not found" });
+      res.status(404).json({ success: false, message: "Book not found" });
       return;
     }
 
-    res.status(200).json(updatedBook);
+    res.status(200).json({
+      success: true,
+      message: "Book updated successfully",
+      data: updatedBook,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error updating the book" });
+    res.status(500).json({
+      success: false,
+      message: "Error updating the book",
+      error: error.message,
+    });
   }
 };
 
@@ -86,13 +118,21 @@ exports.DeleteBook = async (req, res) => {
     const deletedBook = await Book.findByIdAndDelete(req.params.id);
 
     if (!deletedBook) {
-      res.status(404).json({ error: "Book not found" });
+      res.status(404).json({ success: false, message: "Book not found" });
       return;
     }
 
-    res.status(204).send(); // 204 No Content for successful deletion
+    res
+      .status(204)
+      .json({ success: true, message: "Book deleted successfully" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Error deleting the book" });
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: "Error deleting the book",
+        error: error.message,
+      });
   }
 };
