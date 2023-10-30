@@ -1,21 +1,21 @@
 const express = require("express");
 const router = express.Router();
 
-const employeeController = require("../controllers/employee")
+const {getAllBooks, addNewBook, getBookById, UpdateBookDetails, DeleteBook } = require("../controllers/book")
 
-// @route Retrieve all employees
-router.get("/", employeeController.findAll);
+// @route Retrieve all books
+router.get("/", getAllBooks);
 
-// @route Create new employee
-router.post("/", employeeController.create);
+// @route Add new Book
+router.post("/", addNewBook);
 
-// @route Retrieve a Single employee with ID
-router.get("/:id", employeeController.findById);
+// @route Retrieve a Single Book with ID
+router.get("/:id", getBookById);
 
-// @route Update a employee with ID
-router.put("/:id", employeeController.update)
+// @route Update a Book details with ID
+router.put("/:id", UpdateBookDetails)
 
-// @route Delete a employee with ID
-router.delete("/:id", employeeController.delete)
+// @route Delete Book with ID
+router.delete("/:id", DeleteBook)
 
 module.exports = router;
