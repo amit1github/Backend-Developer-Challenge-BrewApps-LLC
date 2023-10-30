@@ -48,7 +48,9 @@ To set up and run this application locally, follow these steps:
 
 2. Configure your MongoDB database connection by creating a .env file in the project root directory. Add the following line and replace <your-mongodb-connection-string> with your MongoDB connection string:
 
+    ```bash
    MONGODB_URI=<your-mongodb-connection-string>
+    ```
 
 3. Install the project dependencies:
 
