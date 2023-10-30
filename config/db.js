@@ -3,7 +3,8 @@ mongoose.set("strictQuery", false);
 
 const connectDB = async () => {
   db_url =
-    process.env.MONGO_URI || "mongodb://localhost:27017/backend-task-for-brewapps-llc";
+    process.env.MONGO_URI ||
+    "mongodb://localhost:27017/backend-task-for-brewapps-llc";
 
   let mongooseConnection = await mongoose.connect(db_url, {
     useNewUrlParser: true,
