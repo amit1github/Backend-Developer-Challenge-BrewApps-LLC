@@ -5,6 +5,7 @@ CRUD of RESTful API using Node.js for managing books.
 # Bookstore API
 
 This is a simple RESTful API for managing books. It allows you to perform CRUD operations on books (Create, Read, Update, Delete) and is built using Node.js, Express.js, and MongoDB.
+To know more about dependencies I have used, check `Package.json` in the root directory.
 
 ## API Endpoints
 
