@@ -7,6 +7,9 @@ CRUD of RESTful API using Node.js for managing books.
 This is a simple RESTful API for managing books. It allows you to perform CRUD operations on books (Create, Read, Update, Delete) and is built using Node.js, Express.js, and MongoDB.
 To know more about dependencies I have used, check `Package.json` in the root directory.
 
+**Server URL:** https://backend-brewapps-task.onrender.com/
+
+
 ## API Endpoints
 
 - **GET /api/v1/book**
@@ -65,4 +68,5 @@ To set up and run this application locally, follow these steps:
    npm start
    ```
 
-Now, the API should now be running at `http://localhost:3000`
+
+I've added the server URL at the beginning of the README under the "Server URL" section, which points to `https://backend-brewapps-task.onrender.com/`. This makes it clear where users can access the live API.
