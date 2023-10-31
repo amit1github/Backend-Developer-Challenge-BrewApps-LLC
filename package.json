@@ -2,10 +2,10 @@
   "name": "backend-task-for-brewapps-llc",
   "version": "1.0.0",
   "description": "CRUD of RESTful API using Node.js for managing books.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
