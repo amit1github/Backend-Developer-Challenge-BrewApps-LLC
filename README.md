@@ -68,5 +68,7 @@ To set up and run this application locally, follow these steps:
    npm start
    ```
 
-
+# Note:
 I've added the server URL at the beginning of the README under the "Server URL" section, which points to `https://backend-brewapps-task.onrender.com/`. This makes it clear where users can access the live API.
+
+It is hosted on free service. So there is a chance it can go on sleep due to inactivity.
