@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 // define a root quote
 app.get("/", (req, res) => {
-  res.send("Hello develoer, Your API is working fine.");
+  res.send("Hello Developer, Your API is working fine.");
 });
 
 // Book routes
